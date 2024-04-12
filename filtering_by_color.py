@@ -41,6 +41,9 @@ while True:
         # Apply thresholding operation based on the selected color range
         mask = cv2.inRange(hsv_frame, lower_hue, upper_hue)
 
+        # Display the mask
+        cv2.imshow('mask', mask)
+
         # Apply bitwise AND between original image and mask to get filtered result
         res = cv2.bitwise_and(frame, frame, mask=mask)
 
